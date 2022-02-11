@@ -1,6 +1,6 @@
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/storage';
+import * as firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/storage";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 
@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// host files on firebase storage 
+// host files on firebase storage
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 
