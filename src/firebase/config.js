@@ -1,6 +1,6 @@
-import * as firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/storage";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 
@@ -15,11 +15,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // host files on firebase storage
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore };
+export { projectStorage, projectFirestore, timestamp, analytics };
