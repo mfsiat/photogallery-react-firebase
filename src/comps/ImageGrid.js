@@ -5,7 +5,7 @@ const ImageGrid = () => {
   const { docs } = useFirestore("images");
   console.log(docs);
   return (
-    <div className="App">
+    <div className="img-grid">
       {docs &&
         docs.map((doc) => (
           <div className="img-wrap" key={doc.id}>
